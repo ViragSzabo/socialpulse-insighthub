@@ -3,7 +3,7 @@
 
 ### Table of Content
 - [1. Objective](#1-objective)
-- [2. Diagrams](#2-diagrams)
+- [2. Components](#2-components)
   - [2.1. Unified Modeling Language (UML)](#21-unified-modeling-language-uml)
   - [2.2. Use Case](#22-use-case)
 - [3. Define Features](#3-define-features)
