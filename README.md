@@ -2,7 +2,18 @@
 ## NHL Stenden | Final Assignment | Threading in C#
 
 ### Table of Content
-
+- [1. Objective](#1-objective)
+- [2. Diagrams](#2-diagrams)
+  - [2.1. Unified Modeling Language (UML)](#21-unified-modeling-language-uml)
+  - [2.2. Use Case](#22-use-case)
+- [3. Define Features](#3-define-features)
+  - [3.1 .NET MAUI](#31-.net-maui)
+  - [3.2 PLINQ](#32-plinq)
+- [4. Steps](#4-steps)
+- [5. Timeline](#5-timeline)
+- [6. User Stories](#6-user-stories)
+- [7. Test Plan](#7-test-plan)
+- [8. Additional Information](#8-additional-information)
 
 
 ### 1. Objective
@@ -28,6 +39,12 @@ The application should use multi-threading, PLINQ, and provide a clean GUI for u
 | Real-time Updates | Implement real-time updates for social media metrics using the thread pool, ensuring timely information for users. |
 | Data Visualization | Use plots and graphs to visually represent social media analytics. Allow users to customize and interact with the visualizations. |
 
+#### 2.3 Unified Modeling Language (UML)
+(diagram)
+
+#### 3.4 Use Case
+(diagram)
+
 ### 3. Define Features
 | Name | Version | Date | Note |
 | --- | --- | --- | --- |
@@ -46,7 +63,7 @@ It provides a cross-platform framework for building native applications, and it 
 **Real-Time Updates:** If your application includes real-time updates for social media metrics, PLINQ can be used to efficiently process incoming data from multiple sources concurrently.
 **Data Visualization:** Depending on the complexity of your visualizations, PLINQ can aid in parallelizing data transformations before rendering graphs and charts.
 
-### 4. Project Steps To Handle
+### 4. Steps
 | # | Title | Description |
 | --- | --- | --- |
 | 1 | Authentication | Set up authentication mechanisms for each social media platform. |
