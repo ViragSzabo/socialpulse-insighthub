@@ -1,7 +1,7 @@
 # Social Pulse Insight Hub
 ## NHL Stenden | Final Assignment | Threading in C#
 
-### 1. Getting Started
+## Getting Started
 Read about the project in the following documents:
 | Documents | Folder |
 | --- | --- |
@@ -9,5 +9,5 @@ Read about the project in the following documents:
 | Technical Document | Documents/Technical |
 | Test Plan | Documents/Test |
 
-### 12. Additional Information
+## Additional Information
 Virag Szabo | BS | Information Technology | March 2024
