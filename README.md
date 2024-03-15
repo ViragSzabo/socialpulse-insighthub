@@ -84,8 +84,8 @@ It provides a cross-platform framework for building native applications, and it 
 | Title | Description |
 | --- | --- |
 | User Authentications | As a user, I want to log in securely to access my social media analytics dashboard. |
-| Social Media Integration | As a user, I want to connect and authenticate my social media accounts to the dashboard. |
-| Data Fetching | As a user, I want to fetch data from connected social media platforms to view analytics. |
+| Social Media Integration | As a user, I want to connect and authenticate my social media accounts (Facebook, Instagram, X, Snapchat, Thread, etc.) to the dashboard. |
+| Data Fetching | As a user, I want to fetch data from connected social media platforms (Facebook, Instagram, X, Snapchat, Thread, etc.) to view analytics. |
 | Real-Time Updates | As a user, I want to receive real-time updates on social media metrics such as post engagement, follower growth, etc. |
 | Analytics Dashboard | As a user, I want to view and analyze social media analytics in a visually appealing dashboard. |
 | Data Visualization | As a user, I want to visualize social media analytics data using plots, graphs, and charts for better insights. |
