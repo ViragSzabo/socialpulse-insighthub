@@ -45,7 +45,7 @@ The application should use multi-threading, PLINQ, and provide a clean GUI for u
 | DataFetcher | Responsible for fetching social media data from APIs. | Utilizes authentication credentials from SocialMediaAccount to access data. |
 | AnalyticsDashboard | Manages the display of analytics data obtained from social media platforms. Provides tools for visualization, customization, etc. | 
 
-![UML Diagram](2024/SocialPulse-InsightHub.png)
+![UML Diagram](Diagrams/SocialPulse-InsightHub.png)
 
 ### 3. Define Features
 | Name | Version | Date | Note |
