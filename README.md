@@ -56,16 +56,20 @@ The application should use multi-threading, PLINQ, and provide a clean GUI for u
 | GitHub | 3.11.4 | January 30, 2024 | Version Control for the project. |
 | PLINQ | - | - | Identify areas for parallel processing in data fetching and analysis. |
 
-#### 3.1 .NET MAUI
-It provides a cross-platform framework for building native applications, and it comes with built-in support for creating visually appealing and interactive user interfaces, including data visualization components. It allows you to bind your data directly to the UI components. Ensure that your chosen visualization library supports data binding, enabling you to dynamically update visualizations based on real-time data from social media platforms. Consider the responsive design principles provided by .NET MAUI to ensure that your visualizations adapt well to different screen sizes and orientations across various devices.
+#### 3.1 Visual Studio 2022
+Visual Studio 2022 is an integrated development environment (IDE) created by Microsoft. It provides developers with a comprehensive set of tools for building a wide range of applications, including web, mobile, desktop, cloud, and more. Visual Studio offers features such as code editing, debugging, testing, collaboration, and integration with various frameworks and platforms.
 
-#### 3.2 PLINQ
-| Title | Description |
-| --- | --- |
-| Data Processing: | If your application involves processing large sets of social media data, PLINQ can help parallelize operations like filtering, sorting, and aggregating, improving overall performance. |
-| Analytics Dashboard: | When calculating analytics metrics such as post engagement, follower growth, or popular hashtags, PLINQ can be employed to parallelize computations and speed up the generation of insights. |
-| Real-Time Updates: | If your application includes real-time updates for social media metrics, PLINQ can be used to efficiently process incoming data from multiple sources concurrently. |
-| Data Visualization: | Depending on the complexity of your visualizations, PLINQ can aid in parallelizing data transformations before rendering graphs and charts. |
+#### 3.2 .NET MAUI
+.NET Multi-platform App UI (MAUI) is a framework for building native cross-platform applications using .NET. It allows developers to create applications that run on multiple platforms, including Android, iOS, macOS, and Windows, using a single codebase. .NET MAUI provides built-in support for creating visually appealing and interactive user interfaces, along with features for data binding and responsive design. It enables developers to build apps that adapt well to different screen sizes and orientations across various devices.
+
+#### 3.3 .NET Framework
+.NET Framework is a software framework developed by Microsoft for building and running applications on Windows. It provides a comprehensive and consistent programming model for building desktop, web, and server applications. .NET Framework includes a large class library, language interoperability, and support for various programming languages, including C#, Visual Basic, and F#. While .NET MAUI targets cross-platform development, .NET Framework is primarily focused on Windows-based applications.
+
+#### 3.4 GitHub
+GitHub is a web-based platform and version control system used for hosting and managing software projects. It provides features for collaborative development, such as code hosting, version control, issue tracking, and project management. Developers use GitHub to store, share, and collaborate on code repositories, enabling seamless collaboration and coordination among team members. It also offers tools for continuous integration, code review, and deployment, facilitating the software development lifecycle.
+
+#### 3.5 Parallel LINQ (PLINQ)
+PLINQ, short for Parallel LINQ, is an extension of LINQ (Language Integrated Query) introduced in .NET Framework 4.0. It allows developers to execute LINQ queries in parallel, taking advantage of multi-core processors and improving performance for data-intensive operations. PLINQ automatically parallelizes query execution by partitioning data and distributing processing across multiple threads, thereby leveraging the computational power of modern hardware.
 
 ## 4. Project Timeline
 | Phase | Date | Description |
