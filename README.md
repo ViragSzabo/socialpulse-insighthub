@@ -9,7 +9,6 @@
 - [5. User Stories](#5-user-stories)
 - [6. Test Plan](#6-test-plan)
 - [7. Risks Analysis](#7-risks-and-mitigation-strategies)
-- [7. Additional Information](#7-additional-information)
 - [8. Feedback Section](#8-feedback-section)
 - [9. Continuous Improvement](#9-continuous-improvement)
 - [10. Additional Information](#10-additional-information)
@@ -230,7 +229,7 @@ It provides a cross-platform framework for building native applications, and it 
 
 ### 9. Feedback Section
 | Date | Person | Title | Description | Updated Date | Done | Developer
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- |
 | 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
 | 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
 | 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
