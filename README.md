@@ -4,15 +4,15 @@
 ### Table of Content
 - [1. Objective](#1-objective)
 - [2. Components](#2-components)
-  - [2.1. Unified Modeling Language (UML)](#21-unified-modeling-language-uml)
 - [3. Define Features](#3-define-features)
-  - [3.1 .NET MAUI](#31-.net-maui)
-  - [3.2 PLINQ](#32-plinq)
 - [4. Timeline](#4-project-timeline)
 - [5. User Stories](#5-user-stories)
 - [6. Test Plan](#6-test-plan)
+- [7. Risks Analysis](#7-risks-and-mitigation-strategies)
 - [7. Additional Information](#7-additional-information)
-
+- [8. Feedback Section](#8-feedback-section)
+- [9. Continuous Improvement](#9-continuous-improvement)
+- [10. Additional Information](#10-additional-information)
 
 ### 1. Objective
 Develop a C# .NET Maui application that allows users to analyze and visualize social media data from multiple platforms.
@@ -61,10 +61,12 @@ The application should use multi-threading, PLINQ, and provide a clean GUI for u
 It provides a cross-platform framework for building native applications, and it comes with built-in support for creating visually appealing and interactive user interfaces, including data visualization components. It allows you to bind your data directly to the UI components. Ensure that your chosen visualization library supports data binding, enabling you to dynamically update visualizations based on real-time data from social media platforms. Consider the responsive design principles provided by .NET MAUI to ensure that your visualizations adapt well to different screen sizes and orientations across various devices.
 
 #### 3.2 PLINQ
-**Data Processing:** If your application involves processing large sets of social media data, PLINQ can help parallelize operations like filtering, sorting, and aggregating, improving overall performance.
-**Analytics Dashboard:** When calculating analytics metrics such as post engagement, follower growth, or popular hashtags, PLINQ can be employed to parallelize computations and speed up the generation of insights.
-**Real-Time Updates:** If your application includes real-time updates for social media metrics, PLINQ can be used to efficiently process incoming data from multiple sources concurrently.
-**Data Visualization:** Depending on the complexity of your visualizations, PLINQ can aid in parallelizing data transformations before rendering graphs and charts.
+| Title | Description |
+| --- | --- |
+| Data Processing: | If your application involves processing large sets of social media data, PLINQ can help parallelize operations like filtering, sorting, and aggregating, improving overall performance. |
+| Analytics Dashboard: | When calculating analytics metrics such as post engagement, follower growth, or popular hashtags, PLINQ can be employed to parallelize computations and speed up the generation of insights. |
+| Real-Time Updates: | If your application includes real-time updates for social media metrics, PLINQ can be used to efficiently process incoming data from multiple sources concurrently. |
+| Data Visualization: | Depending on the complexity of your visualizations, PLINQ can aid in parallelizing data transformations before rendering graphs and charts. |
 
 ## 4. Project Timeline
 | Phase | Date | Description |
@@ -192,5 +194,61 @@ It provides a cross-platform framework for building native applications, and it 
 | --- | --- | --- | --- |
 | 6.11.1 | Verify | Re-run previously executed test cases to verify that existing functionality remains unaffected. | Test until they are successful, safe and secure. |
 
-### 7. Additional Information
+### 7. Risks and Mitigation Strategies
+#### 7.1 Risks
+* Technical Complexity: Integrating multiple social media APIs and implementing real-time data updates may pose technical challenges.
+* Resource Constraints: Limited availability of the student or access to necessary tools and technologies may impact project timelines and deliverables.
+* Security Vulnerabilities: Inadequate security measures could result in data breaches or unauthorized access to sensitive user information.
+* Scope Creep: Unclear or evolving project requirements may lead to scope creep, causing delays and budget overruns.
+* Third-party Dependencies: Reliance on third-party services for social media integration may introduce risks related to service outages or changes to API functionality.
+* User Adoption: Low user adoption or engagement with the application may indicate a lack of perceived value or usability issues.
+
+#### 7.2 Mitigation Strategies
+* Technical Prototyping: Conduct early prototyping to tackle technical challenges upfront.
+* Team Training: Provide skill development opportunities to enhance team expertise.
+* Security Audits: Regularly audit and test security measures to proactively address vulnerabilities.
+* Incremental Delivery: Use iterative development to manage scope and prioritize features based on user feedback.
+* API Diversification: Integrate alternative APIs to mitigate risks associated with service disruptions.
+* User-Centric Design: Continuously gather user feedback to improve application usability and engagement.
+
+### 8. Definition of Success
+#### 8.1 Key Performance Indicators (KPIs)
+* User Engagement: Measure the number of active users, session duration, and frequency of interactions with the application.
+* Data Accuracy: Monitor the accuracy and reliability of social media analytics data displayed on the dashboard.
+* Performance Metrics: Track application performance indicators such as response time, load time, and server uptime.
+* User Satisfaction: Collect user feedback through surveys or reviews to assess satisfaction with the application's features and usability.
+* Adoption Rate: Evaluate the rate of adoption among target users and identify factors influencing adoption or retention.
+* Security Compliance: Ensure compliance with security standards and regulations, such as GDPR or HIPAA, to protect user privacy and data integrity.
+
+#### 8.2 Success Criteria
+* Achievement of Milestones: Successful completion of project milestones within defined timelines and budgets.
+* Positive User Feedback: High satisfaction ratings and positive reviews from users regarding the application's functionality, performance, and user experience.
+* Increased User Engagement: Growth in the number of active users and user engagement metrics over time.
+* Accurate Analytics: Consistent delivery of accurate and reliable social media analytics data, validated through internal testing and user feedback.
+* Adherence to Security Standards: Compliance with security standards and regulations, as validated through security audits and testing.
+* Stakeholder Satisfaction: Satisfaction of project stakeholders, including sponsors, end-users, and team members, with the overall project outcomes and deliverables.
+
+### 9. Feedback Section
+| Date | Person | Title | Description | Updated Date | Done | Developer
+| --- | --- | --- | --- | --- | --- |
+| 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
+| 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
+| 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
+| 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
+| 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
+
+### 9. Continuous Improvement
+| # | Title | Description |
+| --- | --- | --- |
+| 1 | Feature Enhancement | Continuously improve and enhance the application by adding new features based on user feedback and emerging trends in social media analytics. |
+| 2 | Performance Optimization | Optimize the application's performance by refining algorithms, implementing caching mechanisms, or leveraging cloud services for scalability and reliability. |
+| 3 | UI/UX Refinement | Conduct user testing and iterate on the user interface (UI) and user experience (UX) design to make the application more intuitive, visually appealing, and user-friendly. |
+| 4 | Mobile Optimization | Further optimize the application for mobile devices by implementing responsive design principles, optimizing load times, and enhancing touch interactions. |
+| 5 | Data Privacy and Security | Strengthen the application's data privacy and security measures by implementing additional encryption protocols, access controls, and compliance with industry standards and regulations. |
+| 6 | Integration with Machine Learning | Explore opportunities to integrate machine learning algorithms for advanced analytics, sentiment analysis, or personalized recommendations based on user behaviour. |
+| 7 | Community Engagement | Foster a community around the application by engaging with users, soliciting feedback, and collaborating with other developers or researchers in the field of social media analytics. |
+| 8 | Portfolio Building | Showcase the application as part of my portfolio to demonstrate skills, expertise, and achievements to potential employers or collaborators in the industry. |
+| 9 | Continuous Learning | Stay updated with the latest technologies, tools, and best practices in software development, data analytics, and social media marketing to further enhance my skills and knowledge. |
+
+### 10. Additional Information
 Virag Szabo | BS | Information Technology | March 2024
