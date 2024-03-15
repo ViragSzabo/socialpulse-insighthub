@@ -107,6 +107,8 @@ It provides a cross-platform framework for building native applications, and it 
 | Data Visualization | As a user, I want to visualize social media analytics data using plots, graphs, and charts for better insights. |
 
 #### 6.2 Should-Have
+| Title | Description |
+| --- | --- |
 | Customizable Data Visualization | As a user, I should be able to customize and interact with data visualization (e.g., filter data) to tailor them to my needs. |
 | Multi-Platform Support | As a user, I should be able to access the application and view the analytics dashboard from multiple platforms (e.g., desktop, and mobile). |
 | Responsive Design | As a user, I should be able to experience a responsive design that adapts well to different screen sizes and orientations across various devices. |
