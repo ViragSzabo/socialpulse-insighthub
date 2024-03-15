@@ -8,11 +8,10 @@
 - [3. Define Features](#3-define-features)
   - [3.1 .NET MAUI](#31-.net-maui)
   - [3.2 PLINQ](#32-plinq)
-- [4. Steps](#4-steps)
-- [5. Timeline](#5-timeline)
-- [6. User Stories](#6-user-stories)
-- [7. Test Plan](#7-test-plan)
-- [8. Additional Information](#8-additional-information)
+- [4. Timeline](#4-project-timeline)
+- [5. User Stories](#5-user-stories)
+- [6. Test Plan](#6-test-plan)
+- [7. Additional Information](#7-additional-information)
 
 
 ### 1. Objective
