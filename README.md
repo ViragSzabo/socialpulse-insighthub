@@ -5,7 +5,6 @@
 - [1. Objective](#1-objective)
 - [2. Components](#2-components)
   - [2.1. Unified Modeling Language (UML)](#21-unified-modeling-language-uml)
-  - [2.2. Use Case](#22-use-case)
 - [3. Define Features](#3-define-features)
   - [3.1 .NET MAUI](#31-.net-maui)
   - [3.2 PLINQ](#32-plinq)
@@ -40,10 +39,15 @@ The application should use multi-threading, PLINQ, and provide a clean GUI for u
 | Data Visualization | Use plots and graphs to visually represent social media analytics. Allow users to customize and interact with the visualizations. |
 
 #### 2.3 Unified Modeling Language (UML)
-(diagram)
+| Class | Description |
+| --- | --- |
+| SocialMediaApp | Acts as the main application class. Manages the overall functionality and coordination of different components. |
+| SocialMediaAccount | Represents a user's social media accounts. Contains information such as username, authentication tokens, etc. |
+| SocialMediaPlatform | Represents different social media platforms like Twitter, Facebook, Instagram, etc. May contain information about API endpoints, authentication mechanisms, etc. |
+| DataFetcher | Responsible for fetching social media data from APIs. | Utilizes authentication credentials from SocialMediaAccount to access data. |
+| AnalyticsDashboard | Manages the display of analytics data obtained from social media platforms. Provides tools for visualization, customization, etc. | 
 
-#### 3.4 Use Case
-(diagram)
+![UML Diagram](2024/SocialPulse/InsightHub.png)
 
 ### 3. Define Features
 | Name | Version | Date | Note |
