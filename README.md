@@ -127,33 +127,87 @@ It provides a cross-platform framework for building native applications, and it 
 | Built-in Social Media Posting | As a user, I will not have the ability to post directly to social media platforms from the dashboard. |
 
 ### 7. Test Plan
-#### 7.1 First
+#### 7.1 Authentication
+##### Objective: Ensure users can securely log in to the application.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.1.1 | ... | ... | ... |
-| 7.1.2 | ... | ... | ... |
-| 7.1.3 | ... | ... | ... |
+| 7.1.1 | Valid credentials | Verify that valid credentials allow access to the dashboard. | Successful login. |
+| 7.1.2 | Invalid credentials | Verify that invalid credentials are rejected with appropriate error messages. | Send an error message to the user. |
+| 7.1.3 | Forgot password | Test the functionality of the "Forgot Password" feature. | Change password functionality works properly and the user can log in with the new password. |
 
-#### 7.2 Second
+#### 7.2 Social Media Integration
+##### Objective: Verify that users can successfully connect and authenticate their social media accounts.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.2.1 | ... | ... | ... |
-| 7.2.2 | ... | ... | ... |
-| 7.2.3 | ... | ... | ... |
+| 7.2.1 | Integration | Test the integration with various social media platforms. | Successful integration with social media platforms. |
+| 7.2.2 | Revoke | Ensure that users can revoke access to connected accounts. | Able to revoke the connection between the accounts. |
+| 7.2.3 | Error handling | Test the handling of authentication errors and prompts for reauthentication. | Proper error handling for security reasons. |
 
-#### 7.3 Third
+#### 7.3 Data Fetching
+##### Objective: Validate that the application can fetch data from connected social media platforms.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.3.1 | ... | ... | ... |
-| 7.3.2 | ... | ... | ... |
-| 7.3.3 | ... | ... | ... |
+| 7.3.1 | Data fetch | Verify that data is fetched accurately and promptly. | Up-to-date data analysis is shown on the dashboard. |
+| 7.3.2 | API | Test the handling of API rate limits and errors. | API works properly. |
+| 7.3.3 | Data match | Ensure that fetched data matches expectations and is consistent across platforms. | Correct data is presented on the dashboard. |
 
-#### 7.4 Four
+#### 7.4 Analytics Dashboard
+##### Objective: Ensure that the analytics dashboard displays data accurately and effectively.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.4.1 | ... | ... | ... |
-| 7.4.2 | ... | ... | ... |
-| 7.4.3 | ... | ... | ... |
+| 7.4.1 | Analytics | Verify that all analytics metrics (e.g., post engagement, follower growth, popular hashtags) are displayed correctly. | Correct data are displayed. |
+| 7.4.2 | Performance | Test the performance and scalability of real-time updates with a large dataset. | The application is working properly despite a large number of datasets. |
+| 7.4.3 | Notify | Ensure that users receive appropriate notifications for significant changes in metrics. | Send a notification or mail to the user about any changes. |
+
+#### 7.5 Cross-Platform Compatibility
+##### Objective: Validate that the application works seamlessly across different platforms and devices.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.5.1 | Web browser | Test the application on various web browsers (e.g., Chrome, Firefox, Explorer). | Proper performance on different web browsers. |
+| 7.5.2 | Functionality | Verify the functionality and UI consistency on different operating systems (e.g., Windows and Android). | Proper performance on mobile and desktop. |
+
+#### 7.6 Usability and Accessibility
+##### Objective: Evaluate the usability and accessibility of the application for all users.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.6.1 | Alpha | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
+| 7.6.2 | Beta | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
+
+#### 7.7 Performance and Scalability
+##### Objective: Assess the performance and scalability of the application under various conditions.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.7.1 | Response time | Test the application's response time and loading speed with different network conditions. | Quick and fast response time. |
+| 7.7.2 | Usage | Conduct load testing to determine the application's performance under heavy user traffic. | Proper performance under heavy user traffic. |
+| 7.7.3 | Structure | Evaluate the scalability of the application's backend infrastructure to handle increased data volume. | Proper backend structure. |
+
+#### 7.8 Security
+##### Objective: Ensure that the application adheres to security best practices and protects user data.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.8.1 | Vulnerabilities | Test for common security vulnerabilities (e.g., SQL injection, cross-site scripting) using automated scanning tools. | Successful scanning. |
+| 7.8.2 | Sensitive data | Verify that sensitive user data is encrypted both in transit and at rest. | No leaking of any sensitive information about the users. |
+| 7.8.3 | Penetration testing | Conduct penetration testing to identify and address potential security weaknesses. | Proper and successful testing. |
+
+#### 7.9 Error Handling and Recovery
+##### Objective: Validate that the application handles errors gracefully and provides appropriate error messages.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.9.1 | Troubleshooting | Verify that error messages are clear and informative, and help users troubleshoot issues. | Clear error messages for the users. |
+| 7.9.2 | Recovery | Test the recovery process after encountering errors to ensure data integrity and application stability. | Professional recovery. |
+
+#### 7.10 Integration Testing
+##### Objective: Test the integration between different components and third-party services.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.10.1 | Process | Verify that data fetched from social media platforms is correctly processed and integrated into the analytics dashboard. | Proper and correct integration. |
+| 7.10.2 | Connection | Test the interaction between the frontend UI and backend APIs for a seamless user experience. | Proper performance between the UI and the APIs. |
+
+#### 7.11 Regression Testing
+##### Objective: Ensure that recent code changes have not introduced any new defects or regressions.
+| Step | Title | Description | Expected Result |
+| --- | --- | --- | --- |
+| 7.11.1 | Verify | Re-run previously executed test cases to verify that existing functionality remains unaffected. | Test until they are successful, safe and secure. |
 
 ### 8. Additional Information
 Virag Szabo | BS | Information Technology | March 2024
