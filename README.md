@@ -3,13 +3,13 @@
 
 ## Getting Started
 Get familiar with the project in the following documents:
-| Documents | Folder |
+| Documents | File Type | Folder |
 | --- | --- |
-| Project Plan | Documents/Planning |
-| Technical Document | Documents/Technical |
-| Test Plan | Documents/Test |
-| Plan Timeline | Documents/Planning |
-| UML Diagram | Diagrams |
+| Project Plan | PDF | Documents/Planning |
+| Technical Document | PDF | Documents/Technical |
+| Test Plan | PDF | Documents/Test |
+| Plan Timeline | PDF | Documents/Planning |
+| UML Diagram | PNG | Diagrams |
 
 ## Additional Information
 Virag Szabo | BS | Information Technology | March 2024
