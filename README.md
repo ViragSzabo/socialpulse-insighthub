@@ -99,34 +99,30 @@ It provides a cross-platform framework for building native applications, and it 
 #### 6.1 Must-Have
 | Title | Description |
 | --- | --- |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
+| User Authentications | As a user, I want to log in securely to access my social media analytics dashboard. |
+| Social Media Integration | As a user, I want to connect and authenticate my social media accounts to the dashboard. |
+| Data Fetching | As a user, I want to fetch data from connected social media platforms to view analytics. |
+| Real-Time Updates | As a user, I want to receive real-time updates on social media metrics such as post engagement, follower growth, etc. |
+| Analytics Dashboard | As a user, I want to view and analyze social media analytics in a visually appealing dashboard. |
+| Data Visualization | As a user, I want to visualize social media analytics data using plots, graphs, and charts for better insights. |
 
 #### 6.2 Should-Have
-| Title | Description |
-| --- | --- |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
+| Customizable Data Visualization | As a user, I should be able to customize and interact with data visualization (e.g., filter data) to tailor them to my needs. |
+| Multi-Platform Support | As a user, I should be able to access the application and view the analytics dashboard from multiple platforms (e.g., desktop, and mobile). |
+| Responsive Design | As a user, I should be able to experience a responsive design that adapts well to different screen sizes and orientations across various devices. |
 
-#### 6.3 Could-Have
+#### 6.4 Could-Have
 | Title | Description |
 | --- | --- |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
+| Predictive Analytics | As a user, I could predict analytics features that forecast future trends based on historical data. |
+| Collaboration Features | As a user, I could collaborate with team members by sharing analytics dashboards and insights. |
+| Social Media Scheduling | As a user, I could schedule social media posts directly from the analytics dashboard. |
 
 #### 6.4 Won't-Have
 | Title | Description |
 | --- | --- |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
-| ? | As a user, I want... |
+| Advanced Machine Learning Models | As a user, I will not have access to advanced machine learning models for predictive analytics due to resource constraints. |
+| Built-in Social Media Posting | As a user, I will not have the ability to post directly to social media platforms from the dashboard. |
 
 ### 7. Test Plan
 #### 7.1 First
