@@ -240,7 +240,49 @@ PLINQ, short for Parallel LINQ, is an extension of LINQ (Language Integrated Que
 | 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
 | 01-03-2024 | Rob Loves | ... | ... | 01-03-2024 | [] | Virag Szabo |
 
-### 9. Continuous Improvement
+### 10. Lifecycle
+#### 10.1 Design
+##### 10.1.1 Database
+SQL Server is known for its performance optimization features such as indexing, query optimization, and in-memory processing. It can efficiently handle complex queries and large datasets, which are common in social media analytics applications. SQL Server integrates well with other Microsoft technologies such as .NET framework, Visual Studio, and Azure cloud services. Using .NET MAUI for the application development can provide a seamless integration and interoperability.
+[] Create the new database in SQL Server Management Studio.
+[] Identify the entities and attributes required for storing user data, including user authentication credentials and social media account information.
+[] Define the tables and relationships needed to represent social media platforms, API endpoints, and authentication mechanisms.
+[] Design tables to store fetched social media data, such as posts, engagements, follower counts, and hashtags.
+[] Plan indexing and optimization strategies to enhance query performance for data retrieval and analysis.
+[] Provide an Entity Relationship Diagram (ERD) to provide a visual representation of the database schema.
+[] Execute the SQL scripts to deploy the database schema in the SQL Server instance.
+[] Validate the database schema by inspecting the tables, columns, and relationships using SQL Server Management Studio.
+[] Test CRUD (Create, Read, Update, Delete) operations on the database tables to verify data manipulation functionality.
+
+##### 10.1.2 Mockups
+[] Create mockups for the user interface (UI) of the application using ADOBE XD.
+[] Design UI elements such as buttons, forms, charts, and graphs to visualize social media analytics data.
+[] Incorporate feedback from stakeholders and potential users to refine the mockups.
+[] Ensure consistency in UI design across different screens and platforms (e.g., desktop, mobile).
+
+#### 10.2 Development 
+[] Set up the development environment with the necessary tools and frameworks (e.g., Visual Studio 2022, .NET MAUI).
+[] Implement database schema based on the design specifications.
+[] Develop backend logic for user authentication, social media integration, and data fetching.
+[] Create frontend components using .NET MAUI for building cross-platform user interfaces.
+[] Test each component individually to ensure functionality and compatibility.
+[] Integrate frontend and backend components to create a cohesive application.
+
+#### 10.3 Testing
+[] Develop a comprehensive test plan covering unit tests, integration tests, and end-to-end tests.
+[] Execute unit tests for individual functions and methods to verify correctness.
+[] Perform the steps of the test plan to validate interactions between different modules and components.
+[] Conduct end-to-end tests to simulate user interactions and workflow scenarios.
+[] Identify and fix any bugs or issues discovered during testing iterations.
+
+#### 10.4 Present
+[] Prepare a presentation by organizing content and visuals.
+[] Create epic slides summarizing key aspects of the project, including objectives, features, technologies used, and outcomes.
+[] Highlight the achievements, challenges, and learnings from the project lifecycle.
+[] Practice delivering the presentation.
+[] Showcase the project to stakeholders, including instructors, classmates, and potential users.
+
+### 11. Future Maintenance
 | # | Title | Description |
 | --- | --- | --- |
 | 1 | Feature Enhancement | Continuously improve and enhance the application by adding new features based on user feedback and emerging trends in social media analytics. |
@@ -253,5 +295,5 @@ PLINQ, short for Parallel LINQ, is an extension of LINQ (Language Integrated Que
 | 8 | Portfolio Building | Showcase the application as part of my portfolio to demonstrate skills, expertise, and achievements to potential employers or collaborators in the industry. |
 | 9 | Continuous Learning | Stay updated with the latest technologies, tools, and best practices in software development, data analytics, and social media marketing to further enhance my skills and knowledge. |
 
-### 10. Additional Information
+### 12. Additional Information
 Virag Szabo | BS | Information Technology | March 2024
