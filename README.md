@@ -67,36 +67,20 @@ It provides a cross-platform framework for building native applications, and it 
 **Real-Time Updates:** If your application includes real-time updates for social media metrics, PLINQ can be used to efficiently process incoming data from multiple sources concurrently.
 **Data Visualization:** Depending on the complexity of your visualizations, PLINQ can aid in parallelizing data transformations before rendering graphs and charts.
 
-### 4. Steps
-| # | Title | Description |
-| --- | --- | --- |
-| 1 | Authentication | Set up authentication mechanisms for each social media platform. |
-| 2 | Implement API calls | To fetch data from social media accounts. |
-| 3 | Data | Handle data storage and update strategies. |
-| 4 | Multi-Threading | Integrate PLINQ for efficient data processing. |
-| 5 | Real-Time | Ensure timely and accurate information is displayed on the dashboard. |
-| 6 | Data Visualization | Implement and interact visualizations for various analytics metrics. |
-| 7 | GUI | Ensure a user-friendly experience with smooth navigation. |
-| 8 | Testing | Test the application including unit- and perform integration testing. |
-| 9 | Document | Create user documentation for future reference. |
-| 10 | Submission | Prepare the final project submission, including the source code, documentation, and version control history. |
-| 11 | Presentation | Prepare a presentation to showcase the key features, functionalities, and the development process. |
-
-### 5. Timeline
+## 4. Project Timeline
 | Phase | Date | Description |
 | --- | --- | --- |
-| System Architecture | March 1 - 3, 2024 | Define the overall application. Write Start Document. |
-| Database Design | March 1 - 3, 2024 | Plan the structure of the database to store user data and analytics metrics. |
-| User Interface Mockups | March 1 - 3, 2024 | Create and finalize mockups for the analytics dashboard and user settings. |
-| Kick-off | March 4, 2024 | Present the idea for the lecturer. |
-| Development | March 4 - 8, 2024 | Create a project and build up the starting structures of the project. |
-| Development | March 4 - 8, 2024 | Add APIs. Adjust visualization. Add social media registration. |
-| Testing | March 9 - 11, 2024 | Test the features and fix the project. |
-| Submit | March 12, 2024 | Hand in the project with all the necessary documents and folders. |
-| Presentation | March 9 - 11, 2024 | Present the work you have done. |
+| System Architecture | March 1 - 15, 2024 | Define the overall application. Write Start Document. |
+| Database Design | March 15, 2024 | Plan the structure of the database to store user data and analytics metrics. |
+| User Interface Mockups | March 15, 2024 | Create and finalize mockups for the analytics dashboard and user settings. |
+| Kick-off | March 15 - 17, 2024 | Present the idea for the lecturer. |
+| Development | March 18 - 31, 2024 | Create a project and build up the starting structures of the project. Add APIs. Adjust visualization. Add social media registration. |
+| Testing | March 18 - 31, 2024 | Test the features and fix the project. |
+| Submit | March 30, 2024 | Hand in the project with all the necessary documents and folders. |
+| Presentation | March 31, 2024 | Present the work you have done. |
 
-### 6. User Stories
-#### 6.1 Must-Have
+### 5. User Stories
+#### 5.1 Must-Have
 | Title | Description |
 | --- | --- |
 | User Authentications | As a user, I want to log in securely to access my social media analytics dashboard. |
@@ -106,108 +90,108 @@ It provides a cross-platform framework for building native applications, and it 
 | Analytics Dashboard | As a user, I want to view and analyze social media analytics in a visually appealing dashboard. |
 | Data Visualization | As a user, I want to visualize social media analytics data using plots, graphs, and charts for better insights. |
 
-#### 6.2 Should-Have
+#### 5.2 Should-Have
 | Title | Description |
 | --- | --- |
 | Customizable Data Visualization | As a user, I should be able to customize and interact with data visualization (e.g., filter data) to tailor them to my needs. |
 | Multi-Platform Support | As a user, I should be able to access the application and view the analytics dashboard from multiple platforms (e.g., desktop, and mobile). |
 | Responsive Design | As a user, I should be able to experience a responsive design that adapts well to different screen sizes and orientations across various devices. |
 
-#### 6.4 Could-Have
+#### 5.4 Could-Have
 | Title | Description |
 | --- | --- |
 | Predictive Analytics | As a user, I could predict analytics features that forecast future trends based on historical data. |
 | Collaboration Features | As a user, I could collaborate with team members by sharing analytics dashboards and insights. |
 | Social Media Scheduling | As a user, I could schedule social media posts directly from the analytics dashboard. |
 
-#### 6.4 Won't-Have
+#### 5.4 Won't-Have
 | Title | Description |
 | --- | --- |
 | Advanced Machine Learning Models | As a user, I will not have access to advanced machine learning models for predictive analytics due to resource constraints. |
 | Built-in Social Media Posting | As a user, I will not have the ability to post directly to social media platforms from the dashboard. |
 
-### 7. Test Plan
-#### 7.1 Authentication
+### 6. Test Plan
+#### 6.1 Authentication
 ##### Objective: Ensure users can securely log in to the application.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.1.1 | Valid credentials | Verify that valid credentials allow access to the dashboard. | Successful login. |
-| 7.1.2 | Invalid credentials | Verify that invalid credentials are rejected with appropriate error messages. | Send an error message to the user. |
-| 7.1.3 | Forgot password | Test the functionality of the "Forgot Password" feature. | Change password functionality works properly and the user can log in with the new password. |
+| 6.1.1 | Valid credentials | Verify that valid credentials allow access to the dashboard. | Successful login. |
+| 6.1.2 | Invalid credentials | Verify that invalid credentials are rejected with appropriate error messages. | Send an error message to the user. |
+| 6.1.3 | Forgot password | Test the functionality of the "Forgot Password" feature. | Change password functionality works properly and the user can log in with the new password. |
 
-#### 7.2 Social Media Integration
+#### 6.2 Social Media Integration
 ##### Objective: Verify that users can successfully connect and authenticate their social media accounts.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.2.1 | Integration | Test the integration with various social media platforms. | Successful integration with social media platforms. |
-| 7.2.2 | Revoke | Ensure that users can revoke access to connected accounts. | Able to revoke the connection between the accounts. |
-| 7.2.3 | Error handling | Test the handling of authentication errors and prompts for reauthentication. | Proper error handling for security reasons. |
+| 6.2.1 | Integration | Test the integration with various social media platforms. | Successful integration with social media platforms. |
+| 6.2.2 | Revoke | Ensure that users can revoke access to connected accounts. | Able to revoke the connection between the accounts. |
+| 6.2.3 | Error handling | Test the handling of authentication errors and prompts for reauthentication. | Proper error handling for security reasons. |
 
-#### 7.3 Data Fetching
+#### 6.3 Data Fetching
 ##### Objective: Validate that the application can fetch data from connected social media platforms.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.3.1 | Data fetch | Verify that data is fetched accurately and promptly. | Up-to-date data analysis is shown on the dashboard. |
-| 7.3.2 | API | Test the handling of API rate limits and errors. | API works properly. |
-| 7.3.3 | Data match | Ensure that fetched data matches expectations and is consistent across platforms. | Correct data is presented on the dashboard. |
+| 6.3.1 | Data fetch | Verify that data is fetched accurately and promptly. | Up-to-date data analysis is shown on the dashboard. |
+| 6.3.2 | API | Test the handling of API rate limits and errors. | API works properly. |
+| 6.3.3 | Data match | Ensure that fetched data matches expectations and is consistent across platforms. | Correct data is presented on the dashboard. |
 
-#### 7.4 Analytics Dashboard
+#### 6.4 Analytics Dashboard
 ##### Objective: Ensure that the analytics dashboard displays data accurately and effectively.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.4.1 | Analytics | Verify that all analytics metrics (e.g., post engagement, follower growth, popular hashtags) are displayed correctly. | Correct data are displayed. |
-| 7.4.2 | Performance | Test the performance and scalability of real-time updates with a large dataset. | The application is working properly despite a large number of datasets. |
-| 7.4.3 | Notify | Ensure that users receive appropriate notifications for significant changes in metrics. | Send a notification or mail to the user about any changes. |
+| 6.4.1 | Analytics | Verify that all analytics metrics (e.g., post engagement, follower growth, popular hashtags) are displayed correctly. | Correct data are displayed. |
+| 6.4.2 | Performance | Test the performance and scalability of real-time updates with a large dataset. | The application is working properly despite a large number of datasets. |
+| 6.4.3 | Notify | Ensure that users receive appropriate notifications for significant changes in metrics. | Send a notification or mail to the user about any changes. |
 
-#### 7.5 Cross-Platform Compatibility
+#### 6.5 Cross-Platform Compatibility
 ##### Objective: Validate that the application works seamlessly across different platforms and devices.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.5.1 | Web browser | Test the application on various web browsers (e.g., Chrome, Firefox, Explorer). | Proper performance on different web browsers. |
-| 7.5.2 | Functionality | Verify the functionality and UI consistency on different operating systems (e.g., Windows and Android). | Proper performance on mobile and desktop. |
+| 6.5.1 | Web browser | Test the application on various web browsers (e.g., Chrome, Firefox, Explorer). | Proper performance on different web browsers. |
+| 6.5.2 | Functionality | Verify the functionality and UI consistency on different operating systems (e.g., Windows and Android). | Proper performance on mobile and desktop. |
 
-#### 7.6 Usability and Accessibility
+#### 6.6 Usability and Accessibility
 ##### Objective: Evaluate the usability and accessibility of the application for all users.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.6.1 | Alpha | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
-| 7.6.2 | Beta | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
+| 6.6.1 | Alpha | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
+| 6.6.2 | Beta | Conduct usability testing with representative users to identify any usability issues. | Collect feedback from testers and update the application according to that. |
 
-#### 7.7 Performance and Scalability
+#### 6.7 Performance and Scalability
 ##### Objective: Assess the performance and scalability of the application under various conditions.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.7.1 | Response time | Test the application's response time and loading speed with different network conditions. | Quick and fast response time. |
-| 7.7.2 | Usage | Conduct load testing to determine the application's performance under heavy user traffic. | Proper performance under heavy user traffic. |
-| 7.7.3 | Structure | Evaluate the scalability of the application's backend infrastructure to handle increased data volume. | Proper backend structure. |
+| 6.7.1 | Response time | Test the application's response time and loading speed with different network conditions. | Quick and fast response time. |
+| 6.7.2 | Usage | Conduct load testing to determine the application's performance under heavy user traffic. | Proper performance under heavy user traffic. |
+| 6.7.3 | Structure | Evaluate the scalability of the application's backend infrastructure to handle increased data volume. | Proper backend structure. |
 
-#### 7.8 Security
+#### 6.8 Security
 ##### Objective: Ensure that the application adheres to security best practices and protects user data.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.8.1 | Vulnerabilities | Test for common security vulnerabilities (e.g., SQL injection, cross-site scripting) using automated scanning tools. | Successful scanning. |
-| 7.8.2 | Sensitive data | Verify that sensitive user data is encrypted both in transit and at rest. | No leaking of any sensitive information about the users. |
-| 7.8.3 | Penetration testing | Conduct penetration testing to identify and address potential security weaknesses. | Proper and successful testing. |
+| 6.8.1 | Vulnerabilities | Test for common security vulnerabilities (e.g., SQL injection, cross-site scripting) using automated scanning tools. | Successful scanning. |
+| 6.8.2 | Sensitive data | Verify that sensitive user data is encrypted both in transit and at rest. | No leaking of any sensitive information about the users. |
+| 6.8.3 | Penetration testing | Conduct penetration testing to identify and address potential security weaknesses. | Proper and successful testing. |
 
-#### 7.9 Error Handling and Recovery
+#### 6.9 Error Handling and Recovery
 ##### Objective: Validate that the application handles errors gracefully and provides appropriate error messages.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.9.1 | Troubleshooting | Verify that error messages are clear and informative, and help users troubleshoot issues. | Clear error messages for the users. |
-| 7.9.2 | Recovery | Test the recovery process after encountering errors to ensure data integrity and application stability. | Professional recovery. |
+| 6.9.1 | Troubleshooting | Verify that error messages are clear and informative, and help users troubleshoot issues. | Clear error messages for the users. |
+| 6.9.2 | Recovery | Test the recovery process after encountering errors to ensure data integrity and application stability. | Professional recovery. |
 
-#### 7.10 Integration Testing
+#### 6.10 Integration Testing
 ##### Objective: Test the integration between different components and third-party services.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.10.1 | Process | Verify that data fetched from social media platforms is correctly processed and integrated into the analytics dashboard. | Proper and correct integration. |
-| 7.10.2 | Connection | Test the interaction between the frontend UI and backend APIs for a seamless user experience. | Proper performance between the UI and the APIs. |
+| 6.10.1 | Process | Verify that data fetched from social media platforms is correctly processed and integrated into the analytics dashboard. | Proper and correct integration. |
+| 6.10.2 | Connection | Test the interaction between the frontend UI and backend APIs for a seamless user experience. | Proper performance between the UI and the APIs. |
 
-#### 7.11 Regression Testing
+#### 6.11 Regression Testing
 ##### Objective: Ensure that recent code changes have not introduced any new defects or regressions.
 | Step | Title | Description | Expected Result |
 | --- | --- | --- | --- |
-| 7.11.1 | Verify | Re-run previously executed test cases to verify that existing functionality remains unaffected. | Test until they are successful, safe and secure. |
+| 6.11.1 | Verify | Re-run previously executed test cases to verify that existing functionality remains unaffected. | Test until they are successful, safe and secure. |
 
-### 8. Additional Information
+### 7. Additional Information
 Virag Szabo | BS | Information Technology | March 2024
