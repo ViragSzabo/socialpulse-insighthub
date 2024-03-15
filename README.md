@@ -2,7 +2,7 @@
 ## NHL Stenden | Final Assignment | Threading in C#
 
 ## Getting Started
-Read about the project in the following documents:
+Information about the project in the following documents:
 | Documents | Folder |
 | --- | --- |
 | Project Plan | Documents/Planning |
