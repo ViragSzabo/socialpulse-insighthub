@@ -4,7 +4,7 @@
 ## Getting Started
 Get familiar with the project in the following documents:
 | Documents | File Type | Folder | Link |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Project Plan | PDF | Documents/Planning | - |
 | Technical Document | PDF | Documents/Technical | - |
 | Test Plan | PDF | Documents/Test | - |
