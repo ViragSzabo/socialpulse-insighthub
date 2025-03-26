@@ -1,0 +1,57 @@
+﻿@page "/analysis"
+
+<h1>📊 Data Analytics</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (analyticsData == null)
+{
+    <p><em>Loading analytics...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>Followers</th>
+                <th>Engagement Rate</th>
+                <th>Posts This Week</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in analyticsData)
+            {
+                <tr>
+                    <td>@data.Platform</td>
+                    <td>@data.Followers</td>
+                    <td>@data.EngagementRate %</td>
+                    <td>@data.PostsThisWeek</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<SocialMediaData> analyticsData = new List<SocialMediaData>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+        analyticsData = new()
+        {
+            new SocialMediaData { Platform = "Instagram", Followers = 12000, EngagementRate = 4.5, PostsThisWeek = 10 },
+            new SocialMediaData { Platform = "Twitter", Followers = 5000, EngagementRate = 2.1, PostsThisWeek = 8 },
+            new SocialMediaData { Platform = "Facebook", Followers = 8000, EngagementRate = 3.8, PostsThisWeek = 6 }
+        };
+    }
+
+    private class SocialMediaData
+    {
+        public string Platform { get; set; } = "";
+        public int Followers { get; set; }
+        public double EngagementRate { get; set; }
+        public int PostsThisWeek { get; set; }
+    }
+}

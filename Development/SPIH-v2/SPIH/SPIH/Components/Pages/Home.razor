@@ -1,0 +1,42 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<h1>📊 Social Pulse Insight Hub</h1>
+<p>Welcome to your social media analytics dashboard!</p>
+
+@if (isLoggedIn)
+{
+    <button class="btn btn-danger" @onclick="Logout">Logout</button>
+}
+else
+{
+    <button class="btn btn-primary" @onclick="Login">Login</button>
+}
+
+@code
+{
+    private bool isLoggedIn = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var storedLogin = await LocalStorage.GetItemAsync<bool>("isLoggedIn");
+        isLoggedIn = storedLogin;
+    }
+
+    protected async Task Login()
+    {
+        isLoggedIn = true;
+        await LocalStorage.SetItemAsync("isLoggedIn", true);
+        StateHasChanged(); 
+        Navigation.NavigateTo("/analysis"); 
+    }
+
+    protected async Task Logout()
+    {
+        isLoggedIn = false;
+        await LocalStorage.RemoveItemAsync("isLoggedIn");
+        StateHasChanged(); 
+        Navigation.NavigateTo("/login");
+    }
+}

@@ -1,0 +1,46 @@
+﻿@page "/login"
+@inject NavigationManager Navigation
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@using Microsoft.AspNetCore.Components.Forms;
+
+<h1>🔐 Login</h1>
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <InputText id="username" class="form-control" @bind-Value="loginModel.Username" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+
+    private async Task HandleLogin()
+    {
+        if (loginModel.Username == "user" && loginModel.Password == "password")
+        {
+            await LocalStorage.SetItemAsync("isLoggedIn", true);
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            Console.WriteLine("Invalid credentials");
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+}
