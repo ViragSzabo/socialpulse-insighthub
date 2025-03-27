@@ -1,4 +1,0 @@
-C:\Users\szabo\OneDrive\Dokumentumok\University\Threading C#\socialpulse-insighthub\Development\SPIH-v2\SPIH\SPIH\bin\Release\net8.0-android\publish\com.companyname.spih-Signed.aab
-C:\Users\szabo\OneDrive\Dokumentumok\University\Threading C#\socialpulse-insighthub\Development\SPIH-v2\SPIH\SPIH\bin\Release\net8.0-android\publish\com.companyname.spih.aab
-C:\Users\szabo\OneDrive\Dokumentumok\University\Threading C#\socialpulse-insighthub\Development\SPIH-v2\SPIH\SPIH\bin\Release\net8.0-android\publish\com.companyname.spih-Signed.apk
-C:\Users\szabo\OneDrive\Dokumentumok\University\Threading C#\socialpulse-insighthub\Development\SPIH-v2\SPIH\SPIH\bin\Release\net8.0-android\publish\_Microsoft.Android.Resource.Designer.dll
