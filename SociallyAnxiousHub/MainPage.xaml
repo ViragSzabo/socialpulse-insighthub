@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SociallyAnxiousHub.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label x:Name="quoteLabel" Text="Random quote here..." />
+            <Label x:Name="kpopStatsLabel" Text="Fetching K-pop stats..." />
+            <Button Text="Fetch K-pop Stats" Clicked="OnFetchKpopStatsClicked" />
+            <ProgressBar x:Name="progressBar" Progress="0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
