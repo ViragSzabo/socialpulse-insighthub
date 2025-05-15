@@ -1,14 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SociallyAnxiousHub.MainPage">
+             x:Class="SociallyAnxiousHub.MainPage"
+             BackgroundColor="#f0f0f0"
+             Padding="20">
 
     <ScrollView>
-        <StackLayout Padding="20">
-            <Label x:Name="quoteLabel" Text="Random quote here..." />
-            <Label x:Name="kpopStatsLabel" Text="Fetching K-pop stats..." />
-            <Button Text="Fetch K-pop Stats" Clicked="OnFetchKpopStatsClicked" />
-            <ProgressBar x:Name="progressBar" Progress="0" />
+        <StackLayout Spacing="20">
+            <!-- Header -->
+            <Label Text="Socially Anxious Hub" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#512BD4" />
+
+            <!-- Quote Section -->
+            <Frame Padding="20" CornerRadius="15" BackgroundColor="#ffffff" HasShadow="True">
+                <Label x:Name="quoteLabel" 
+                       Text="Random quote here..." 
+                       FontSize="16" 
+                       TextColor="#333333" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="CenterAndExpand" />
+            </Frame>
+
+            <!-- K-pop Stats Section -->
+            <Frame Padding="20" CornerRadius="15" BackgroundColor="#ffffff" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label x:Name="kpopStatsLabel" 
+                           Text="Fetching K-pop stats..." 
+                           FontSize="16" 
+                           TextColor="#333333" 
+                           HorizontalOptions="Center" />
+                    <ProgressBar x:Name="progressBar" 
+                                 Progress="0" 
+                                 HeightRequest="10" 
+                                 BackgroundColor="#e0e0e0" 
+                                 ProgressColor="#512BD4" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Fetch Button -->
+            <Button Text="Fetch K-pop Stats" 
+                    BackgroundColor="#512BD4" 
+                    TextColor="White" 
+                    Padding="10" 
+                    CornerRadius="20" 
+                    Clicked="OnFetchKpopStatsClicked" />
+            
+            <!-- Cancel Button -->
+            <Button Text="Cancel Operation" 
+                    BackgroundColor="#FF4C4C" 
+                    TextColor="White" 
+                    Padding="10" 
+                    CornerRadius="20" 
+                    Clicked="OnCancelButtonClicked" />  
         </StackLayout>
     </ScrollView>
 </ContentPage>
