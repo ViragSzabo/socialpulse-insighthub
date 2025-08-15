@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace SociallyAnxiousHub.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel1 : INotifyPropertyChanged
     {
         CancellationTokenSource _cts;
 
@@ -24,7 +24,7 @@ namespace SociallyAnxiousHub.ViewModels
             set { SetField(ref _isBusy, value); ((Command)FetchCommand).ChangeCanExecute(); }
         }
 
-        public MainViewModel(IInstagramService instagram)
+        public MainViewModel1(IInstagramService instagram)
         {
             _instagram = instagram ?? throw new ArgumentNullException(nameof(instagram));
             FetchCommand = new Command(async () => await FetchAll());

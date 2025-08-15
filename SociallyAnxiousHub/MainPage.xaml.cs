@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 
-namespace SociallyAnxiousHub
+namespace SociallyAnxiousHub.Pages.HomePage
 {
     public partial class MainPage : ContentPage
     {

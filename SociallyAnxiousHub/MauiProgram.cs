@@ -15,11 +15,19 @@ namespace SociallyAnxiousHub
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            // Register InstagramRapidApiService
-            builder.Services.AddHttpClient<IInstagramService, InstagramRapidApiService>(client =>
-            {
-                client.BaseAddress = new Uri("https://instagram-data.p.rapidapi.com");
-            });
+            // Register the SpotifyService for dependency injection
+            builder.Services.AddSingleton<SpotifyService>();
+
+            // Register the DatabaseService for local data storage
+            builder.Services.AddSingleton<DatabaseService>();
+
+            // Register the ViewModels and Pages for navigation
+            builder.Services.AddTransient<MainViewModel>();
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<PlayListViewModel>();
+            builder.Services.AddTransient<PlayListPage>();
+            builder.Services.AddTransient<MemoryBoardViewModel>();
+            builder.Services.AddTransient<MemoryBoardPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

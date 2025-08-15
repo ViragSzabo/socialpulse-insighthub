@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SociallyAnxious.Pages.PlaylistPage"
+             x:Class="SociallyAnxiousHub.Pages.PlaylistPage.PlayListPage"
+             Title="Playlist">
+
+    <ContentPage.BindingContext>
+        <vm:PlayListViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <HorizontalStackLayout Spacing="5">
+            <SearchBar Placeholder="Search for a song..."
+                       Text="{Binding SearchQuery}"
+                       HorizontalOptions="FillAndExpand" />
+            <Button Text="Search" Command="{Binding SearchCommand}" />
+        </HorizontalStackLayout>
+
+        <Label Text="Search Results" FontAttributes="Bold" />
+        <CollectionView ItemsSource="{Binding SearchResults}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Title}" Grid.Column="0" />
+                        <Button Text="Add"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PlayListViewModel}}, Path=AddSongToPlaylistCommand}"
+                                CommandParameter="{Binding .}"
+                                Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Text="My Playlist" FontAttributes="Bold" />
+        <CollectionView ItemsSource="{Binding CurrentPlaylist}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Title}" Grid.Column="0" />
+                        <Button Text="Remove"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PlayListViewModel}}, Path=RemoveSongFromPlaylistCommand}"
+                                CommandParameter="{Binding .}"
+                                Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
