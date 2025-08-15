@@ -9,6 +9,14 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="AccentColor">#512BD4</Color>
+            <Style TargetType="Frame" x:Key="CardFrame">
+                <Setter Property="CornerRadius" Value="12"/>
+                <Setter Property="Padding" Value="16"/>
+                <Setter Property="Margin" Value="8"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

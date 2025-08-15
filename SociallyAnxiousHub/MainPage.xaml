@@ -1,60 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SociallyAnxiousHub.MainPage"
-             BackgroundColor="#f0f0f0"
-             Padding="20">
+<ContentPage
+    xmlns:emit="clr-namespace:System.Reflection.Emit;assembly=netstandard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:vm="clr-namespace:SociallyAnxiousHub.ViewModels"
+  x:Class="SociallyAnxiousHub.MainPage"
+  Title="Dashboard"
+  BackgroundColor="#F5F5F5">
 
-    <ScrollView>
-        <StackLayout Spacing="20">
-            <!-- Header -->
-            <Label Text="Socially Anxious Hub" 
-                   FontSize="28" 
-                   FontAttributes="Bold" 
-                   HorizontalOptions="Center" 
-                   TextColor="#512BD4" />
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
 
-            <!-- Quote Section -->
-            <Frame Padding="20" CornerRadius="15" BackgroundColor="#ffffff" HasShadow="True">
-                <Label x:Name="quoteLabel" 
-                       Text="Random quote here..." 
-                       FontSize="16" 
-                       TextColor="#333333" 
-                       HorizontalOptions="Center" 
-                       VerticalOptions="CenterAndExpand" />
-            </Frame>
+    <ScrollView Padding="16">
+        <VerticalStackLayout Spacing="16">
 
-            <!-- K-pop Stats Section -->
-            <Frame Padding="20" CornerRadius="15" BackgroundColor="#ffffff" HasShadow="True">
-                <StackLayout Spacing="10">
-                    <Label x:Name="kpopStatsLabel" 
-                           Text="Fetching K-pop stats..." 
-                           FontSize="16" 
-                           TextColor="#333333" 
-                           HorizontalOptions="Center" />
-                    <ProgressBar x:Name="progressBar" 
-                                 Progress="0" 
-                                 HeightRequest="10" 
-                                 BackgroundColor="#e0e0e0" 
-                                 ProgressColor="#512BD4" />
-                </StackLayout>
-            </Frame>
+                <!-- HEADER -->
+                <Grid BackgroundColor="{StaticResource AccentColor}" HeightRequest="60">
+                <Label Text="🔍 K-Pop Dashboard"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                </Grid>
 
-            <!-- Fetch Button -->
-            <Button Text="Fetch K-pop Stats" 
-                    BackgroundColor="#512BD4" 
-                    TextColor="White" 
-                    Padding="10" 
-                    CornerRadius="20" 
-                    Clicked="OnFetchKpopStatsClicked" />
-            
-            <!-- Cancel Button -->
-            <Button Text="Cancel Operation" 
-                    BackgroundColor="#FF4C4C" 
-                    TextColor="White" 
-                    Padding="10" 
-                    CornerRadius="20" 
-                    Clicked="OnCancelButtonClicked" />  
-        </StackLayout>
-    </ScrollView>
+                <!-- QUOTE CARD -->
+                <Frame Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout>
+                    <Label 
+                        Text="💬 Quote of the Moment"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        TextColor="{StaticResource AccentColor}" />        
+                    <emit:Label 
+                        Text="{Binding QuoteText}"
+                        FontSize="14"
+                        TextColor="#333"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- STATS CARD -->
+                <Frame Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout Spacing="12">
+                    <Label Text="📊 Latest Stats"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="{StaticResource AccentColor}" />
+                    <Label Text="{Binding StatsText}"
+                             FontSize="14"
+                             TextColor="#333"/> 
+                    <ProgressBar 
+                        Progress="{Binding Progress}" 
+                        HeightRequest="8"
+                        BackgroundColor="#EEE"
+                        ProgressColor="{StaticResource AccentColor}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- ACTIONS -->
+            <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                <Button Text="Fetch Stats"
+                            Command="{Binding FetchCommand}"
+                            BackgroundColor="{StaticResource AccentColor}"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Padding="12,8"
+                              Command="{Binding FetchCommand}"
+                              IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
+                <ActivityIndicator IsRunning="{Binding IsBusy}" />
+                <Button Text="Cancel"
+                            Command="{Binding CancelCommand}"
+                            BackgroundColor="#E53935"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Padding="12,8"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

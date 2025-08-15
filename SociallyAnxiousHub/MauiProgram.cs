@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using SociallyAnxiousHub.Services;
 
 namespace SociallyAnxiousHub
 {
@@ -15,8 +15,14 @@ namespace SociallyAnxiousHub
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // Register InstagramRapidApiService
+            builder.Services.AddHttpClient<IInstagramService, InstagramRapidApiService>(client =>
+            {
+                client.BaseAddress = new Uri("https://instagram-data.p.rapidapi.com");
+            });
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

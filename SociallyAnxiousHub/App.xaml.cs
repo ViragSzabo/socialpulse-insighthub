@@ -1,4 +1,6 @@
-﻿namespace SociallyAnxiousHub
+﻿using SociallyAnxiousHub.ViewModels;
+
+namespace SociallyAnxiousHub
 {
     public partial class App : Application
     {
