@@ -31,5 +31,9 @@ A C# .NET MAUI application designed to help users manage their social life throu
 * [Technical Document](https://github.com/ViragSzabo/socialpulse-insighthub/blob/main/Documents/Technical/Technical%20Documentation%202.0.pdf)
 * [Test Plan](https://github.com/ViragSzabo/socialpulse-insighthub/blob/main/Documents/Test/Test%20Plan%202.0.pdf)
 
+## ⚖️ Legal
+* [Privacy Policies](https://github.com/ViragSzabo/socialpulse-insighthub/blob/main/Documents/Other/Privacy%20Policy.pdf)
+* [Terms of Conditions](https://github.com/ViragSzabo/socialpulse-insighthub/blob/main/Documents/Other/Terms%20of%20Services.pdf)
+
 ## 👤 Author
 * **Virag Szabo** | Information Technology | NHL Stenden
