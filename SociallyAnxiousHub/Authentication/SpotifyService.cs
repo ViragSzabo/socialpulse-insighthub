@@ -15,15 +15,23 @@ namespace SociallyAnxiousHub.Authentication
         private string _accessToken;
         private string _refreshToken;
         private string _codeVerifier; // PKCE code verifier
+        private string _clientId;
         private readonly HttpClient _httpClient = new HttpClient();
         private const string TOKEN_URL = "https://accounts.spotify.com/api/token";
         private const string API_BASE_URL = "https://api.spotify.com/v1/";
-        private const string CLIENT_ID = "YOUR_CLIENT_ID"; // Replace with your Spotify Client ID
         private const string REDIRECT_URI = "sociallyanxioushub://callback"; // Must be registered in Spotify Dev Dashboard
 
         public SpotifyService()
         {
+            // Initialize HttpClient and load client ID
             _httpClient.BaseAddress = new Uri(API_BASE_URL);
+        }
+
+        public async Task InitializeAsync()
+        {
+            // Load client ID from secure storage
+            _clientId = await SecureStorage.GetAsync("spotify_client_id");
+            _refreshToken = await SecureStorage.GetAsync("spotify_refresh_token");
         }
 
         public async Task AuthenticateAsync()
@@ -32,14 +40,12 @@ namespace SociallyAnxiousHub.Authentication
             {
                 // 1. Generate the PKCE keys
                 _codeVerifier = GenerateCodeVerifier();
-                var codeChallenge = GenerateCodeChallenge(codeVerifier); // Implement this method
-
+                var codeChallenge = GenerateCodeChallenge(codeVerifier); 
                 var scopes = "user-read-private playlist-read-private";
 
-                var authResult = await WebAuthenticator.AuthenticateAsync(
-                    new Uri($"https://accounts.spotify.com/authorize';\n-{CLIENT_ID}&scope={Uri.EscapeDataString(scopes)}&redirect_uri={Uri.EscapeDataString(REDIRECT_URI)}&code_challenge={codeChallenge}&code_challenge_method=S256"),
-                    new Uri(REDIRECT_URI)
-                );
+                // response_type=code for Authorization Code Flow
+                var authUrl = $"https://accounts.spotify.com/authorize?client_id={_clientId}&response_type=code&redirect_uri={Uri.EscapeDataString(REDIRECT_URI)}&scope={Uri.EscapeDataString(scopes)}&code_challenge={codeChallenge}&code_challenge_method=S256";
+                var authResult = await WebAuthenticator.AuthenticateAsync(new Uri(authUrl), new Uri(REDIRECT_URI));
 
                 var code = authResult.Properties["code"];
 
@@ -60,19 +66,25 @@ namespace SociallyAnxiousHub.Authentication
                 { "grant_type", "authorization_code" },
                 { "code", code },
                 { "redirect_uri", REDIRECT_URI },
-                { "client_id", CLIENT_ID },
+                { "client_id", clientId },
+
                 // 3. Instead of client_secret, send the code_verifier
                 { "code_verifier", codeVerifier }
             });
 
-            using var response = await new HttpClient().SendAsync(request);
-            response.EnsureSuccessStatusCode();
+            // 4. Send the request and handle the response
+            using var response = await _httpClient.SendAsync(request); // Using the same HttpClient instance avoiding unnecessary instantiation
+            response.EnsureSuccessStatusCode(); // Throw if not a success code.
 
             var content = await response.Content.ReadAsStringAsync();
             var tokenResponse = System.Text.Json.JsonSerializer.Deserialize<TokenResponse>(content);
 
             _accessToken = tokenResponse.access_token;
             _refreshToken = tokenResponse.refresh_token;
+
+            // Store tokens securely
+            if (!string.IsNullOrEmpty(_refreshToken))
+                await SecureStorage.SetAsync("spotify_refresh_token", _refreshToken);
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
         }
@@ -81,9 +93,17 @@ namespace SociallyAnxiousHub.Authentication
         private string GenerateCodeVerifier()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, 128)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+            var bytes = new byte[128];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(bytes);
+
+            var result = new char[128];
+            for (int i = 0; i < 128; i++)
+            {
+                result[i] = chars[bytes[i] % chars.Length];
+            }
+
+            return new string(result);
         }
 
         // Generates a code challenge from the code verifier using SHA-256 and Base64 URL encoding.
@@ -142,6 +162,39 @@ namespace SociallyAnxiousHub.Authentication
             }
 
             return songs;
+        }
+
+        // Refresh the access token using the refresh token
+        private async Task RefreshAccessTokenAsync()
+        {
+            var request = new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                { "grant_type", "refresh_token" },
+                { "refresh_token", _refreshToken },
+                { "client_id", clientId }
+            });
+
+            // Reuse the same HttpClient instance
+            var response = await _httpClient.PostAsync(TOKEN_URL, request);
+            response.EnsureSuccessStatusCode();
+
+            // Update the access token
+            var content = await response.Content.ReadAsStringAsync();
+            var tokenResponse = JsonSerializer.Deserialize<TokenResponse>(content);
+            _accessToken = tokenResponse.access_token;
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
+        }
+
+        // Ensure we have a valid access token before making API calls
+        private async Task EnsureAccessTokenAsync()
+        {
+            if (string.IsNullOrEmpty(_accessToken))
+            {
+                if (!string.IsNullOrEmpty(_refreshToken))
+                    await RefreshAccessTokenAsync();
+                else
+                    throw new InvalidOperationException("User not authenticated.");
+            }
         }
     }
 }
