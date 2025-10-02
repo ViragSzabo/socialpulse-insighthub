@@ -13,18 +13,22 @@ namespace SociallyAnxiousHub.Features
         private string _artist;
         private string _album;
         private TimeSpan _duration;
-        private string _spotifyUrl;
-        private string CustomeImagePath;
+        private string? _spotifyUrl;
+        private string? CustomImgUrl;
 
-        public Song(string title, string artist, string album, TimeSpan duration, string customImagePath, string? spotifyUrl)
+        // Constructor
+        public Song(string title, string artist, TimeSpan duration, string album, TimeSpan duration, string customImgUrl, string? spotifyUrl)
         {
             _title = title;
             _artist = artist;
+            _duration = duration;
             _album = album;
             _spotifyUrl = spotifyUrl;
-            CustomeImagePath = customImagePath;
+            CustomImgUrl = customImgUrl;
         }
 
+        // Properties
+        // Getters and Setters
         public string Title
         {
             get { return _title; }
@@ -57,14 +61,16 @@ namespace SociallyAnxiousHub.Features
 
         public string GetCustomImagePath()
         {
-            return CustomeImagePath;
+            return CustomImgUrl;
         }
 
+        // String representation of the song
         public override string ToString()
         {
             return $"{Title} by {Artist} from the album {Album}";
         }
 
+        // Equality based on title, artist, and album (case insensitive)
         public override bool Equals(object obj)
         {
             if (obj is Song song)
@@ -76,17 +82,20 @@ namespace SociallyAnxiousHub.Features
             return false;
         }
 
+        // Hash code based on title, artist, and album (case insensitive)
         public override int GetHashCode()
         {
             return HashCode.Combine(Title.ToLowerInvariant(), Artist.ToLowerInvariant(), Album.ToLowerInvariant());
         }
 
+        // Overloading == and != operators
         public static bool operator ==(Song left, Song right)
         {
             if (ReferenceEquals(left, null)) return ReferenceEquals(right, null);
             return left.Equals(right);
         }
 
+        // Overloading != operator
         public static bool operator !=(Song left, Song right)
         {
             return !(left == right);
