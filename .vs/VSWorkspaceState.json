@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Authentication",
+    "\\Development",
+    "\\Development\\Database",
+    "\\Features",
+    "\\Features\\Mood",
+    "\\Profile",
     "\\SociallyAnxiousHub"
   ],
   "SelectedNode": "\\SociallyAnxiousHub.sln",

@@ -29,6 +29,11 @@ namespace SociallyAnxiousHub
             builder.Services.AddTransient<MemoryBoardViewModel>();
             builder.Services.AddTransient<MemoryBoardPage>();
 
+            // Define the path for the SQLite database
+            var dbPath = Path.Combine(FileSystem.AppDataDirectory, "socialhub.db3");
+            builder.Services.AddSingleton(new DatabaseService(dbPath));
+
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
