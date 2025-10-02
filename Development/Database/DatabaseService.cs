@@ -14,12 +14,21 @@ namespace SociallyAnxiousHub.Database
         public DatabaseService(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
+            
+            var dbService = new DatabaseService(dbPath);
+            await dbService.InitializeAsync();
+        }
 
-            // Initialize tables
-            _database.CreateTableAsync<UserProfileDb>().Wait();
-            _database.CreateTableAsync<MemoryDb>().Wait();
-            _database.CreateTableAsync<MoodEntryDb>().Wait();
-            _database.CreateTableAsync<HabitDb>().Wait();
+        // Initialize tables
+        public async Task InitializeAsync()
+        {
+            await _database.CreateTableAsync<UserProfileDb>();
+            await _database.CreateTableAsync<MemoryDb>();
+            await _database.CreateTableAsync<MoodEntryDb>();
+            await _database.CreateTableAsync<HabitDb>();
+            await _database.CreateTableAsync<PlaylistDb>();
+            await _database.CreateTableAsync<ChallengeDb>();
+            await _database.CreateTableAsync<BadgeDb>();
         }
 
         // User profile methods
@@ -54,25 +63,67 @@ namespace SociallyAnxiousHub.Database
             _database.Table<HabitDb>().ToListAsync();
 
         // Playlist methods
-        public Task<int> SavePlaylistAsync(Playlist playlist) =>
+        public Task<int> SavePlaylistAsync(PlaylistDb playlist) =>
             _database.InsertOrReplaceAsync(playlist);
 
-        public Task<List<Playlist>> GetPlaylistsAsync() => 
-            _database.Table<Playlist>().ToListAsync();
+        public Task<List<PlaylistDb>> GetPlaylistsAsync() =>
+            _database.Table<PlaylistDb>().ToListAsync();
+
+        public static PlaylistDb ToDbModel(Playlist p) => new PlaylistDb
+        {
+            Name = p.Name,
+            Description = p.Description,
+            SpotifyId = p.SpotifyUrl
+        };
+
+        public static Playlist ToFeatureModel(PlaylistDb db) => new Playlist
+        {
+            Name = db.Name,
+            Description = db.Description,
+            SpotifyUrl = db.SpotifyId
+        };
 
         // Challenge methods
-        public Task<int> SaveChallengeAsync(Challenge challenge) =>
+        public Task<int> SaveChallengeAsync(ChallengeDb challenge) =>
             _database.InsertOrReplaceAsync(challenge);
 
-        public Task<List<Challenge>> GetChallengesAsync() => 
-            _database.Table<Challenge>().ToListAsync();
+        public Task<List<ChallengeDb>> GetChallengesAsync() =>
+            _database.Table<ChallengeDb>().ToListAsync();
+
+        public static ChallengeDb ToDbModel(Challenge c) => new ChallengeDb
+        {
+            Title = c.Title,
+            Description = c.Description,
+            IsCompleted = c.isCompleted
+        };
+
+        public static Challenge ToFeatureModel(ChallengeDb db) => new Challenge
+        {
+            Title = db.Title,
+            Description = db.Description,
+            IsCompleted = db.IsCompleted
+        };
 
         // Badge methods
-        public Task<int> SaveBadgeAsync(Badge badge) =>
+        public Task<int> SaveBadgeAsync(BadgeDb badge) =>
             _database.InsertOrReplaceAsync(badge);
 
-        public Task<List<Badge>> GetBadgesAsync() =>
-            _database.Table<Badge>().ToListAsync();
+        public Task<List<BadgeDb>> GetBadgesAsync() =>
+            _database.Table<BadgeDb>().ToListAsync();
+
+        public static BadgeDb ToDbModel(Badge b) => new Badge
+        {
+            Title = b.Title,
+            Description = b.Description,
+            Unlocked = b.Unlocked
+        };
+
+        public static Challenge ToFeatureModel(BadgeDb db) => new Badge
+        {
+            Title = db.Title,
+            Description = db.Description,
+            Unlocked = db.Unlocked
+        };
     }
 }
 
@@ -120,7 +171,7 @@ public class HabitDb
 }
 
 [Table("Playlists")]
-public class Playlist
+public class PlaylistDb
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
@@ -130,7 +181,7 @@ public class Playlist
 }
 
 [Table("Challenges")]
-public class Challenge
+public class ChallengeDb
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
@@ -140,11 +191,11 @@ public class Challenge
 }
 
 [Table("Badges")]
-public class Badge
+public class BadgeDb
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public string ImagePath { get; set; }
+    public bool Unlocked { get; set; }
 }
