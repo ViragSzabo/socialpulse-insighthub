@@ -5,10 +5,10 @@ using System.Text;
 
 namespace SociallyAnxiousHub.Features
 {
-    public class MoodTacker
+    public class MoodTracker
     {
         // Properties
-        private readonly List<MoodEnty> _entries = new List<MoodEntry>();
+        private readonly List<MoodEntry> _entries = new List<MoodEntry>();
         public int Count => _entries.Count;
 
         // Method to add a new mood entry
